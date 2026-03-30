@@ -1,3 +1,4 @@
+1
 var numero = prompt("digite um numero");
 if (numero %2 == 0) {
     alert("Seu número é par")
@@ -5,6 +6,7 @@ if (numero %2 == 0) {
     alert("Seu número é impar")
 }
 
+2
 var idade = prompt("Digite sua idade!")
 if (idade <18) {
     alert("Você é menor de idade")
@@ -16,6 +18,7 @@ for (var i = 1;  i < 11; i++) {
     console.log(i);
 }
 
+3
 console.log("numero aleatorio")
 var x = prompt("Digite um número aleatório!")
 while (x>0) {
@@ -23,6 +26,7 @@ while (x>0) {
     x--;
 }
 
+4
 console.log("tabuada")
 var tabuada = prompt("DIgite um número para a tabuada")
 var multi = 0 
@@ -31,6 +35,9 @@ for (var m = 1; m <11; m++){
     console.log(multi);
 }
 
+
+
+5
 console.log("somatoria")
 var somar = prompt("Digite um número para a soma")
 var result = 0
@@ -39,6 +46,8 @@ for(var s = 0; s < somar; s++){
     console.log(result)
 }
 
+
+6
 console.log("Numeros primos")
 var nprimo = prompt("Digite um número para saber se ele e primo")
 if (nprimo %2 == 1) {
@@ -47,9 +56,11 @@ if (nprimo %2 == 1) {
     ("seu número nao é primo")
 }
 
+
+7
 console.log("Login Simples")
 var senha = 12345
-var login = "pietrorodrigues09"
+var login = "liviaalves"
 var vslogin = prompt("Digite seu login")
 var vsenha = prompt("Digite sua senha")
 if (vslogin == login) {
@@ -62,6 +73,8 @@ if (vslogin == login) {
     alert("usuário errado")
 }
 
+
+8
 console.log("Somatória");
 var numero = 1
 var soma = 0
@@ -74,6 +87,8 @@ while (numero >= 0) {
 }
 console.log(soma)
 
+
+9
 console.log("Adivinhe o número");
 var alt = Math.floor(Math.random() * 10);
 var palpite;
@@ -90,6 +105,8 @@ while(true){
     }
 }
 
+
+10
 console.log("fatorial");
 var numero = parseInt(prompt("Digite um número:"));
 if (numero < 0){
@@ -107,6 +124,9 @@ console.log("validação notas");
 
 var nota;
 
+
+
+11
 while (true) {
     nota = parseFloat(prompt("Digite uma nota de 0 a 10:"));
 
@@ -118,6 +138,8 @@ while (true) {
     }
 }
 
+
+12
 console.log("média notas");
 
 var nota1 = parseFloat(prompt("Digite a primeira nota:"));
@@ -134,6 +156,8 @@ if (media >= 7) {
     console.log("Reprovado!");
 }
 
+
+13
 console.log("caixa eletronico");
 
 var valor = parseInt(prompt("Digite o valor para saque:"));
@@ -158,6 +182,8 @@ valor %= 2;
 
 var notas1 = valor;
 
+
+14
 console.log("Notas de 100: " + notas100);
 console.log("Notas de 50: " + notas50);
 console.log("Notas de 20: " + notas20);
@@ -166,6 +192,8 @@ console.log("Notas de 5: " + notas5);
 console.log("Notas de 2: " + notas2);
 console.log("Notas de 1: " + notas1);
 
+
+15
 console.log("numeros impares");
 
 var num = parseInt(prompt("Digite um número:"));
