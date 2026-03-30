@@ -35,4 +35,22 @@ for (var m = 1; m <11; m++){
 
 }
 
+console.log("somatoria")
+var somar = prompt("Digite um numero") //ver
+var result = 0
+for(var s = 0; 5 < somar; s++){
+    result = result + s;
+    console.log(result)
+}
+
+function primo(num){
+    if (num <= 1) return false;
+    for (let i = 2; i < num; i ++){
+        if (num % i === 0){
+            return false;
+        } 
+    }
+    
+    return true;
+}
 
