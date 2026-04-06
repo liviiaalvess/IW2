@@ -6,14 +6,14 @@ document.addEventListener("DOMContentLoaded", function () {
     const descricoes = [
         "Verifica se um número é par ou ímpar.",
         "Informa se a pessoa é maior ou menor de idade.",
-        "Mostra uma contagem regressiva até zero.",
-        "Imprima a tabuada de um número.",
-        "Calcule a somatória de números.",
+        "Contagem de 1 a 10",
+        "Contagem regressiva",
+        "Tabuada",
+        "Somatória",
         "Verifica se um número é primo (regra simples).",
         "Simula um login com usuário e senha.",
         "Soma números até digitar um valor negativo.",
-        "Jogo para adivinhar um número aleatório.",
-        "Calcula o fatorial de um número.",
+        "Fatorial",
         "Valida se a nota está entre 0 e 10.",
         "Calcula a média de três notas.",
         "Simula um caixa eletrônico e calcula notas.",
@@ -101,211 +101,222 @@ function fecharModal(num) {
 
 // 1
 function func1() {
-    var numero = prompt("Digite um número");
-    if (numero % 2 == 0) {
-        alert("Seu número é par");
-    } else {
-        alert("Seu número é ímpar");
-    }
+    let numero1 = Number(prompt("Digite um número:"));
+
+if (numero1 % 2 === 0) {
+  alert("O número é par.");
+} else {
+  alert("O número é ímpar.");
+
+}
+
 }
 
 // 2
 function func2() {
-    var idade = prompt("Digite sua idade!");
-    if (idade < 18) {
-        alert("Você é menor de idade");
-    } else {
-        alert("Você é maior de idade!");
-    }
+    let idade = Number(prompt("Digite sua idade:"));
+
+if (idade >= 18) {
+  alert("Você é maior de idade.");
+} else {
+  alert("Você é menor de idade.");
+}
 }
 
 // 3
 function func3() {
-    var x = prompt("Digite um número aleatório!");
-    while (x > 0) {
-        console.log(x);
-        x--;
-    }
+    for (let i = 1; i <= 10; i++) {
+        console.log(i);
+      }      
 }
 
 // 4
 function func4() {
-    var tabuada = prompt("Digite um número para a tabuada");
-    for (var m = 1; m < 11; m++) {
-        console.log(tabuada * m);
+    let numero2 = Number(prompt("Digite um número para a contagem regressiva:"));
+
+    while (numero2 >= 0) {
+      console.log(numero2);
+      numero2--;
     }
-}
+}   
 
 // 5
 function func5() {
-    var somar = prompt("Digite um número para a soma");
-    var result = 0;
-    for (var s = 0; s < somar; s++) {
-        result = result + s;
+    let numero3 = Number(prompt("Digite um número para ver a tabuada:"));
+
+    for (let i = 1; i <= 10; i++) {
+      console.log(numero3 + " x " + i + " = " + (numero3 * i));
     }
-    console.log(result);
 }
 
 // 6
 function func6() {
-    var nprimo = prompt("Digite um número para saber se ele é primo");
-    if (nprimo % 2 == 1) {
-        alert("Seu número é primo");
-    } else {
-        alert("Seu número não é primo");
-    }
+    let numero4 = Number(prompt("Digite um número:"));
+let soma = 0;
+
+for (let i = 1; i <= numero4; i++) {
+  soma += i;
+}
+
+alert("A soma de 1 até " + numero4 + " é " + soma);
 }
 
 // 7
 function func7() {
-    var senha = 12345;
-    var login = "liviaalves";
-    var vslogin = prompt("Digite seu login");
-    var vsenha = prompt("Digite sua senha");
-
-    if (vslogin == login) {
-        if (vsenha == senha) {
-            alert("Login concluído");
-        } else {
-            alert("Senha errada");
-        }
+    let numero5 = Number(prompt("Digite um número:"));
+    let primo = true;
+    
+    if (numero5 <= 1) {
+      primo = false;
     } else {
-        alert("Usuário errado");
+      for (let i = 2; i < numero5; i++) {
+        if (numero5 % i === 0) {
+          primo = false;
+          break;
+        }
+      }
     }
+    
+    if (primo) {
+      alert("O número é primo.");
+    } else {
+      alert("O número não é primo.");
+    }
+    
 }
 
 // 8
 function func8() {
-    var numero = 0;
-    var soma = 0;
-
-    while (true) {
-        numero = parseInt(prompt("Digite um número maior que 0:"));
-
-        if (isNaN(numero)) {
-            alert("Valor inválido. Tente novamente.");
-            continue;
-        }
-
-        if (numero < 0) {
-            break;
-        }
-
-        soma = soma + numero;
+    let usuarioCorreto = "admin";
+    let senhaCorreta = "1234";
+    
+    let usuario = prompt("Digite o usuário:");
+    let senha = prompt("Digite a senha:");
+    
+    while (usuario !== usuarioCorreto || senha !== senhaCorreta) {
+      alert("Usuário ou senha incorretos. Tente novamente.");
+      usuario = prompt("Digite o usuário:");
+      senha = prompt("Digite a senha:");
     }
-
-    alert("A soma total é: " + soma);
+    
+    alert("Login realizado com sucesso!");
 }
 
 
 // 9
 function func9() {
-    var alt = Math.floor(Math.random() * 10);
-    var palpite;
-
-    while (true) {
-        palpite = parseInt(prompt("Adivinhe o número"));
-
-        if (palpite == alt) {
-            alert("PARABÉNS VOCÊ ACERTOU O NÚMERO");
-            break;
-        } else if (palpite < alt) {
-            alert("O número é MAIOR!");
-        } else {
-            alert("O número é MENOR!");
-        }
+    let total = 0;
+    let numero6 = Number(prompt("Digite um número positivo (negativo para parar):"));
+    
+    while (numero6 >= 0) {
+      total += numero6;
+      numero6 = Number(prompt("Digite outro número positivo (negativo para parar):"));
     }
+    
+    alert("A soma total é " + total);
 }
 
 // 10
 function func10() {
-    var numero = parseInt(prompt("Digite um número"));
-    var fatorial = 1;
-
-    if (numero < 0) {
-        console.log("Fatorial não existe para números negativos.");
-    } else {
-        for (var i = 1; i <= numero; i++) {
-            fatorial *= i;
-        }
+    let secreto = Math.floor(Math.random() * 10) + 1;
+    let palpite = Number(prompt("Adivinhe o número de 1 a 10:"));
+    
+    while (palpite !== secreto) {
+      if (palpite < secreto) {
+        alert("O número secreto é maior.");
+      } else {
+        alert("O número secreto é menor.");
+      }
+    
+      palpite = Number(prompt("Tente novamente:"));
     }
-
-    console.log("Fatorial: " + fatorial);
+    
+    alert("Parabéns! Você acertou.");
 }
 
 // 11
 function func11() {
-    var nota;
-
-    while (true) {
-        nota = parseFloat(prompt("Digite uma nota de 0 a 10"));
-
-        if (nota >= 0 && nota <= 10) {
-            console.log("Nota válida: " + nota);
-            break;
-        } else {
-            console.log("Valor inválido, tente novamente.");
-        }
+    let numero7 = Number(prompt("Digite um número:"));
+    let fatorial = 1;
+    
+    for (let i = 1; i <= numero7; i++) {
+      fatorial *= i;
     }
+    
+    alert("O fatorial de " + numero7 + " é " + fatorial);
 }
 
 // 12
 function func12() {
-    var n1 = parseFloat(prompt("Digite a primeira nota"));
-    var n2 = parseFloat(prompt("Digite a segunda nota"));
-    var n3 = parseFloat(prompt("Digite a terceira nota"));
+    let nota = Number(prompt("Digite uma nota de 0 a 10:"));
 
-    var media = (n1 + n2 + n3) / 3;
-
-    console.log("Média: " + media.toFixed(2));
-
-    if (media >= 7) {
-        console.log("Aprovado!");
-    } else {
-        console.log("Reprovado!");
+    while (nota < 0 || nota > 10) {
+      alert("Nota inválida. Digite novamente.");
+      nota = Number(prompt("Digite uma nota de 0 a 10:"));
     }
+    
+    alert("Nota válida: " + nota);
+    
 }
 
 // 13 e 14
 function func13() {
-    var valor = parseInt(prompt("Digite o valor para saque"));
+    let nota1 = Number(prompt("Digite a primeira nota:"));
+    let nota2 = Number(prompt("Digite a segunda nota:"));
+    let nota3 = Number(prompt("Digite a terceira nota:"));
+    
+    let media = (nota1 + nota2 + nota3) / 3;
+    
+    alert("Média: " + media);
+    
+    if (media >= 7) {
+      alert("Aprovado!");
+    } else {
+      alert("Reprovado!");
+    }
 
-    var notas100 = Math.floor(valor / 100);
-    valor %= 100;
+    let valor = Number(prompt("Digite o valor do saque:"));
 
-    var notas50 = Math.floor(valor / 50);
-    valor %= 50;
+let ced100 = Math.floor(valor / 100);
+valor %= 100;
 
-    var notas20 = Math.floor(valor / 20);
-    valor %= 20;
+let ced50 = Math.floor(valor / 50);
+valor %= 50;
 
-    var notas10 = Math.floor(valor / 10);
-    valor %= 10;
+let ced20 = Math.floor(valor / 20);
+valor %= 20;
 
-    var notas5 = Math.floor(valor / 5);
-    valor %= 5;
+let ced10 = Math.floor(valor / 10);
+valor %= 10;
 
-    var notas2 = Math.floor(valor / 2);
-    valor %= 2;
+let ced5 = Math.floor(valor / 5);
+valor %= 5;
 
-    var notas1 = valor;
+let ced2 = Math.floor(valor / 2);
+valor %= 2;
 
-    console.log("Notas de 100: " + notas100);
-    console.log("Notas de 50: " + notas50);
-    console.log("Notas de 20: " + notas20);
-    console.log("Notas de 10: " + notas10);
-    console.log("Notas de 5: " + notas5);
-    console.log("Notas de 2: " + notas2);
-    console.log("Notas de 1: " + notas1);
+let ced1 = Math.floor(valor / 1);
+
+alert(
+  "Cédulas:\n" +
+  "100: " + ced100 + "\n" +
+  "50: " + ced50 + "\n" +
+  "20: " + ced20 + "\n" +
+  "10: " + ced10 + "\n" +
+  "5: " + ced5 + "\n" +
+  "2: " + ced2 + "\n" +
+  "1: " + ced1
+)
+
 }
 
 // 15
 function func15() {
-    var num = parseInt(prompt("Digite um número"));
+    let numero8 = Number(prompt("Digite um número:"));
 
-    for (var i = 1; i <= num; i++) {
-        if (i % 2 !== 0) {
-            console.log(i);
-        }
+    for (let i = 1; i <= numero8; i++) {
+      if (i % 2 !== 0) {
+        console.log(i);
+      }
     }
 }
